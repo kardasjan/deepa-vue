@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.side-nav {
+    .router-link-exact-active {
+        .sidenav-menu-item {
+            background-color: #3b3b3b;            
+        }
+        .stripe {
+            display: block;
+        }
+    }
+}
+#app {
+    min-height: 100%;
+    position: relative;
+}
+a {
+    color: #5996c6;
+}
