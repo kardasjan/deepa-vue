@@ -1,15 +1,20 @@
 <template>
   <article>
-    <div class="site-detail" v-if="site != null">
-      <site-detail-menu></site-detail-menu>
-      <div class="content">
-        <h2>
-          {{ site.name }}
-          <span>{{ site._id }}</span>
-        </h2>
-        <div class="columns">
-          <div class="column is-6">
-            <table class="table people">
+    <loading v-if="isLoading" />
+    <div v-else>
+      <div class="site-detail" v-if="site != false">
+        <site-detail-menu></site-detail-menu>
+        <div class="row">
+
+          <div class="title col-xs-12">
+            <h2>
+              {{ site.name }}
+              <span>{{ site._id }}</span>
+            </h2>
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+            <table class="table is-fullwidth people centered">
               <thead>
                 <tr>Osadní výbor</tr>
               </thead>
@@ -27,7 +32,7 @@
               </tbody>
             </table>
 
-            <table class="table address">
+            <table class="table is-fullwidth address">
               <thead>
                 <tr>Adresa</tr>
               </thead>
@@ -42,7 +47,7 @@
               </tbody>
             </table>
 
-            <table class="table informations">
+            <table class="table is-fullwidth informations">
               <thead>
                 <tr>Informace o objektu</tr>
               </thead>
@@ -58,7 +63,7 @@
               </tbody>
             </table>
 
-            <table class="table additional-informations">
+            <table class="table is-fullwidth additional-informations">
               <thead>
                 <tr>Doplňující informace</tr>
               </thead>
@@ -78,8 +83,9 @@
               </tbody>
             </table>
           </div>
-          <div class="column is-6">
-            <table class="table contract">
+
+          <div class="col-xs-12 col-md-6">
+            <table class="table is-fullwidth contract">
               <thead>
                 <tr>Servisní smlouva</tr>
               </thead>
@@ -100,12 +106,12 @@
             </table>
             <circular-countdown :dateFrom="'2016-02-21'" :dateTo="'2017-10-22'"></circular-countdown>
           </div>
+
         </div>
-        <p v-for="(item, key, index) in site" :key="index">{{ item }}</p>
       </div>
-    </div>
-    <div v-else>
-      Vyberte objekt!
+      <div class="site-detail" v-else>
+        Vyberte objekt!
+      </div>
     </div>
   </article>
 </template>
@@ -113,6 +119,7 @@
 <script>
 import SiteDetailMenu from './SiteDetailMenu.vue'
 import CircularCountdown from './CircularCountdown.vue'
+import Loading from '../Loading.vue'
 
 export default {
   name: 'site-detail',
@@ -122,25 +129,28 @@ export default {
     },
     sites () {
       return this.$store.getters.sites
+    },
+    isLoading () {
+      return this.$store.getters.isLoading
     }
   },
   components: {
     SiteDetailMenu,
-    CircularCountdown
+    CircularCountdown,
+    Loading
   }
 }
 </script>
 
 <style scoped lang="scss">
 .site-detail {
+  height: 100%;
+  padding: 12px 15px;
   border-width: 0 5px 0 0;
   border-color: #ececec;
   border-style: solid;
-  padding: 15px 20px 0 0;
-}
-.content {
-  padding: 20px 0 0 8px;
   h2 {
+    padding: 20px 0 0 0;
     font-size: 18px;
     color: #5996c6;
     span {
@@ -148,9 +158,6 @@ export default {
       color: #aeaeae;
       padding: 0 0 0 12px;
     }
-  }
-  .columns {
-    padding: 15px 0 0 0;
   }
 }
 table {
@@ -167,6 +174,11 @@ table {
     td {
       border: none;
     }
+  }
+}
+@media (max-width: 768px) {
+  .site-detail {
+    border-width: 0 0 5px 0;
   }
 }
 </style>

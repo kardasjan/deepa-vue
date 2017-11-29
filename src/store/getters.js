@@ -10,5 +10,8 @@ export default {
   },
   sites (store) {
     return store.sites
+  },
+  isLoading (store) {
+    return store.isLoading
   }
 }

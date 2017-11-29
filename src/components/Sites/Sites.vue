@@ -1,14 +1,14 @@
 <template>
-  <div class="columns">
-    <site-list class="column is-3"></site-list>
-    <site-detail class="column is-7"></site-detail>
-    <div class="column is-2"></div>
-  </div>
+  <section class="row">
+    <side-panel class="col-xs-12 col-sm-4 col-md-3"></side-panel>
+    <site-detail class="col-xs-12 col-sm-8 col-md-7"></site-detail>
+    <div class="col-xs-12 col-md-2"></div>
+  </section>
 </template>
 
 <script>
 
-import SiteList from './SiteList.vue'
+import SidePanel from './SidePanel.vue'
 import SiteDetail from './SiteDetail.vue'
 
 export default {
@@ -30,7 +30,7 @@ export default {
     }
   },
   components: {
-    SiteList,
+    SidePanel,
     SiteDetail
   }
 }

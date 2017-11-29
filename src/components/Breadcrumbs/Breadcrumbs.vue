@@ -32,4 +32,12 @@ export default {
 .menu a {
   color: #ececec;
 }
+@media (max-width: 768px) {
+  .menu li {
+    display: none;
+  }
+  .menu li:first-of-type {
+    display: block;
+  }
+}
 </style>

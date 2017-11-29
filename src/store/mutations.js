@@ -36,5 +36,18 @@ export default {
   },
   closeNotification (store, id) {
     store.notifications = store.notifications.filter(item => item.id !== id)
+  },
+  requestTriggered (store) {
+    store.isLoading = true
+    store.isError = false
+  },
+  requestSuccess (store) {
+    store.isLoading = false
+    store.isError = false
+  },
+  requestFailed (store, response) {
+    console.log(response)
+    store.isLoading = false
+    store.isError = true
   }
 }

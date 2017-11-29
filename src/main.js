@@ -5,9 +5,16 @@ import App from './App'
 import store from './store/store.js'
 import router from './router/index.js'
 import localStorage from './store/localStorage.js'
+import Vuebar from 'vuebar'
+import lodash from 'lodash'
+import VueLodash from 'vue-lodash'
+
 import 'document-register-element'
 
 Vue.config.productionTip = false
+
+Vue.use(Vuebar)
+Vue.use(VueLodash, lodash)
 
 function polyfillCE () {
   require.ensure([], require => {

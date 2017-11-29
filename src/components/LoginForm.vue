@@ -1,34 +1,31 @@
 <template>
-    <div class="form container columns is-desktop is-vcentered">
-      <div class="column">
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="text" placeholder="Username" v-model="username">
-            <span class="icon is-small is-left">
-              <i class="fa fa-user"></i>
-            </span>
-          </p>
+    <section class="section">
+        <div class="form">
+          <div class="field is-horizontal has-addons">
+            <p class="control has-icons-left is-expanded">
+              <input class="input" type="text" placeholder="Username" v-model="username">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field is-horizontal has-addons">
+            <p class="control has-icons-left is-expanded">
+              <input class="input" type="password" placeholder="Password" v-model="password">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field is-horizontal is-grouped is-grouped-right">
+            <p class="control">
+              <a class="button is-success" :class="{'is-loading' : isLoading}" @click='tryLogin'>
+                Login
+              </a>
+            </p>
+          </div>
         </div>
-        <div class="field">
-          <p class="control has-icons-left">
-            <input class="input" type="password" placeholder="Password" v-model="password">
-            <span class="icon is-small is-left">
-              <i class="fa fa-lock"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <p class="control">
-            <button class="button is-success" @click='tryLogin'>
-              Login
-            </button>
-            <button class="button is-default" @click='checkToken'>
-              Check Token
-            </button>
-          </p>
-        </div>
-      </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -37,41 +34,25 @@ export default {
   data () {
     return {
       username: '',
-      password: '',
-      msg: 'Please login first!'
+      password: ''
     }
   },
   methods: {
     tryLogin: function () {
       this.$store.dispatch('tryLogin', { username: this.username, password: this.password, router: this.$router })
-    },
-    checkToken: function () {
-      alert(this.token)
     }
   },
   computed: {
-    errors () {
-      return this.$store.state.errors
-    },
-    token () {
-      return this.$store.state.token
+    isLoading () {
+      return this.$store.getters.isLoading
     }
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .form {
-  padding: 80px 0;
-  margin: 0 auto;
   max-width: 500px;
-}
-.errors {
-  margin: 15px 0;
-}
-.columns.is-vcentered {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  margin: 0 auto;
 }
 </style>

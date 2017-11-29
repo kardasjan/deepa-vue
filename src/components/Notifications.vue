@@ -26,16 +26,17 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .notification {
-    width: 500px;
+    min-width: 250px;
+    max-width: 500px;
     margin: 10px auto;
     padding: 12px;
   }
   .notifications {
     position: fixed;
-    top: 0;
-    left: 150px;
+    top: 70px;
+    right: 15px;
     height: 0;
-    width: 500px;
+    width: auto;
     z-index: 9999;
   }
 </style>

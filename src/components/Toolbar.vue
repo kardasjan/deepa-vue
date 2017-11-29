@@ -1,9 +1,11 @@
 <template>
-  <nav>
-    <div id="nav-toggle"></div>
-    <breadcrumbs />
-    <toolbar-user-panel></toolbar-user-panel>
-    <div class="datetime is-hidden-mobile">{{ datetime }}</div>
+  <nav class="row">
+    <div class="col-xs-12">
+      <div id="nav-toggle"></div>
+      <breadcrumbs />
+      <toolbar-user-panel class="is-hidden-mobile"></toolbar-user-panel>
+      <div class="datetime is-hidden-mobile">{{ datetime }}</div>
+    </div>
   </nav> 
 </template>
 
