@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import AssignedContactMenu from './assignedContactMenu.vue'
+import AssignedContactMenu from './AssignedContactMenu.vue'
 
 export default {
   name: 'expand-tab',
