@@ -4,7 +4,7 @@
       <div class="dropdown-trigger" @click="toggleActive">
           <div aria-haspopup="true" aria-controls="dropdown-menu">
           <div class="user-image"></div>
-          <div class="fullname is-hidden-mobile">{{ fullname }}</div>
+          <div class="fullname is-hidden-mobile">{{ username }}</div>
           <div class="carret"></div>
           </div>
       </div>
@@ -34,6 +34,9 @@ export default {
     }
   },
   computed: {
+    username () {
+      return this.$store.state.user.username
+    },
     fullname () {
       return this.$store.state.user.fullname != null ? this.$store.state.user.fullname : 'Neznámé jméno'
     },

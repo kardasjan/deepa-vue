@@ -3,7 +3,7 @@
     <loading v-if="isLoading" />
     <div v-else>
       <div class="site-detail" v-if="site != false">
-        <site-detail-menu></site-detail-menu>
+        <!-- <site-detail-menu></site-detail-menu> -->
         <div class="row">
 
           <div class="title col-xs-12">

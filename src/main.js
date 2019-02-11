@@ -8,6 +8,8 @@ import localStorage from './store/localStorage.js'
 import Vuebar from 'vuebar'
 import lodash from 'lodash'
 import VueLodash from 'vue-lodash'
+import PrettyCheckbox from 'pretty-checkbox-vue'
+import VueCollapse from 'vue2-collapse'
 
 import 'document-register-element'
 
@@ -15,6 +17,8 @@ Vue.config.productionTip = false
 
 Vue.use(Vuebar)
 Vue.use(VueLodash, lodash)
+Vue.use(PrettyCheckbox)
+Vue.use(VueCollapse)
 
 function polyfillCE () {
   require.ensure([], require => {

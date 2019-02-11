@@ -4,8 +4,8 @@
     <div v-on:click="setActive('objekty')">
       <side-nav-item :image="objektyIcon" link="/objekty">OBJEKTY</side-nav-item>
     </div>
-    <div v-on:click="setActive('nastaveni')">
-      <side-nav-item :image="settingsIcon" link="/settings">NASTAVENÍ</side-nav-item>
+    <div v-on:click="setActive('kontakty')">
+      <side-nav-item :image="settingsIcon" link="/kontakty">KONTAKTY</side-nav-item>
     </div>
   </ceri-side-nav>
 </template>

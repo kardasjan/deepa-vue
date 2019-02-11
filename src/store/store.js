@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import mutations from './mutations'
+import mutations from './mutations/mutations'
 import actions from './actions/actions'
 import getters from './getters'
 
@@ -11,10 +11,16 @@ const state = {
   errors: [],
   notifications: [],
   sites: [],
+  messageTypes: [],
   selectedSite: false,
+  contacts: [],
+  selectedContact: false,
+  assignableContacts: [],
+  assignableMsgTypes: [],
   user: {
     authenticated: false,
-    fullname: null
+    fullname: null,
+    username: 'Admin'
   },
   isLoading: false,
   isError: false

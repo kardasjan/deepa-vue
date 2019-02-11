@@ -1,20 +1,20 @@
 <template>
-  <section class="add-site">
-    <div class="add-site-button" @click="triggerModal"></div>
+  <section class="add-contact">
+    <div class="add-contact-button" @click="triggerModal"></div>
     <div class="modal" :class="{'is-active' : isActive}">
       <div class="modal-background"></div>
       <div class="modal-content">
 
         <div class="field is-horizontal">
           <div class="field-label is-normal">
-            <label class="label">Název</label>
+            <label class="label">Jméno</label>
           </div>
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input" type="text" placeholder="Name" v-model="name">
+                <input class="input" type="text" placeholder="Jméno" v-model="name">
                 <span class="icon is-small is-left">
-                  <i class="fa fa-institution"></i>
+                  <i class="fa fa-user"></i>
                 </span>
               </p>
             </div>
@@ -23,14 +23,14 @@
 
         <div class="field is-horizontal">
           <div class="field-label is-normal">
-            <label class="label">IP Adresa</label>
+            <label class="label">Telefon</label>
           </div>
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input" type="text" placeholder="IP" v-model="ip">
+                <input class="input" type="text" placeholder="Telefon" v-model="phone">
                 <span class="icon is-small is-left">
-                  <i class="fa fa-institution"></i>
+                  <i class="fa fa-phone"></i>
                 </span>
               </p>
             </div>
@@ -39,60 +39,19 @@
 
         <div class="field is-horizontal">
           <div class="field-label is-normal">
-            <label class="label">Slug</label>
+            <label class="label">Email</label>
           </div>
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input" type="text" placeholder="Slug" v-model="slug">
+                <input class="input" type="text" placeholder="Email" v-model="email">
                 <span class="icon is-small is-left">
-                  <i class="fa fa-institution"></i>
+                  <i class="fa fa-envelope"></i>
                 </span>
               </p>
             </div>
           </div>
         </div>
-
-        <!--
-          ### Saved for possible future development
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">IČO</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <p class="control is-expanded has-icons-left">
-                <input class="input" type="text" placeholder="73691723" :value="ico">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-id-cart-o"></i>
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="field is-horizontal">
-          <div class="field-label is-normal">
-            <label class="label">Fáze</label>
-          </div>
-          <div class="field-body">
-            <div class="field is-narrow">
-              <div class="control">
-                <div class="select is-fullwidth">
-                  <select>
-                    <option>Servisní smlouva</option>
-                    <option>Výstavba</option>
-                    <option>Audit</option>
-                    <option>Jiné</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        -->
 
         <div class="field is-horizontal">
           <div class="field-label">
@@ -101,8 +60,8 @@
           <div class="field-body">
             <div class="field is-grouped">
               <p class="control">
-                <a class="button is-primary" @click="createObject">
-                  Vytvořit objekt
+                <a class="button is-primary" @click="createContact">
+                  Vytvořit kontakt
                 </a>
               </p>
               <p class="control">
@@ -122,27 +81,26 @@
 
 <script>
 export default {
-  name: 'add-site',
+  name: 'add-contact',
   data () {
     return {
       isActive: false,
       name: '',
-      ip: '',
-      slug: ''
+      phone: '',
+      email: ''
     }
   },
   methods: {
     triggerModal () {
       this.isActive = !this.isActive
     },
-    createObject: function () {
-      var site = {
+    createContact: function () {
+      var contact = {
         name: this.name,
-        ip: this.ip,
-        slug: this.slug
+        phone: this.phone,
+        email: this.email
       }
-      console.log(site)
-      this.$store.dispatch('tryCreateSite', { site, router: this.$router })
+      this.$store.dispatch('tryCreateContact', { contact, router: this.$router })
       this.isActive = !this.isActive
     }
   }
@@ -150,7 +108,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.add-site-button {
+.add-contact-button {
   background: url('../../assets/img/add-site.png');
   height: 30px;
   width: 30px;

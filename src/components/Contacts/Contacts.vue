@@ -1,7 +1,7 @@
 <template>
   <section class="row">
     <side-panel class="col-xs-12 col-sm-4 col-md-3"></side-panel>
-    <site-watch class="col-xs-12 col-sm-8 col-md-7"></site-watch>
+    <contact-detail class="col-xs-12 col-sm-8 col-md-7"></contact-detail>
     <div class="col-xs-12 col-md-2"></div>
   </section>
 </template>
@@ -9,30 +9,29 @@
 <script>
 
 import SidePanel from './SidePanel.vue'
-import SiteWatch from './SiteWatch.vue'
+import ContactDetail from './ContactDetail.vue'
 
 export default {
-  name: 'sites',
+  name: 'contacts',
   created () {
-    this.$store.dispatch('getSites')
-    this.$store.dispatch('getMessageTypes')
-    this.$store.commit('selectSite', false)
+    this.$store.dispatch('getContacts')
+    this.$store.commit('selectContact', false)
   },
   watch: {
     $route () {
-      if (this.$route.path === '/objekty') {
-        this.$store.commit('selectSite', false)
+      if (this.$route.path === '/kontakty') {
+        this.$store.commit('selectContact', false)
       }
     }
   },
   computed: {
-    sites () {
-      return this.$store.state.sites
+    contacts () {
+      return this.$store.state.contacts
     }
   },
   components: {
     SidePanel,
-    SiteWatch
+    ContactDetail
   }
 }
 </script>
