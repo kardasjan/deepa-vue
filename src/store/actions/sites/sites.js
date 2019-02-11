@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3015'
+const API_URL = process.env.API_URL
 const SITES_URL = API_URL + '/sites'
 const SITE_URL = API_URL + '/sites/site'
 const MESSAGE_TYPES_URL = API_URL + '/messageTypes'

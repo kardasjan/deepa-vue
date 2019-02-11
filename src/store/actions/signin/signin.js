@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3015'
+const API_URL = process.env.API_URL
 const AUTH_URL = API_URL + '/auth'
 
 export default {
