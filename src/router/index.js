@@ -6,8 +6,8 @@ import Contacts from '@/components/Contacts/Contacts'
 import ContactDetail from '@/components/Contacts/ContactDetail'
 import SiteDetail from '@/components/Sites/SiteDetail'
 import SiteWatch from '@/components/Sites/SiteWatch'
-import LogInForm from '@/components/LogInForm'
-import SignInForm from '@/components/SignInForm'
+import LoginForm from '@/components/LoginForm'
+import SigninForm from '@/components/SigninForm'
 
 Vue.use(Router)
 
@@ -22,16 +22,16 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'LogIn',
-    component: LogInForm,
+    name: 'Login',
+    component: LoginForm,
     meta: {
       bcLinkText: 'Přihlásit se'
     }
   },
   {
     path: '/signin',
-    name: 'SignIn',
-    component: SignInForm,
+    name: 'Signin',
+    component: SigninForm,
     meta: {
       bcLinkText: 'Zaregistrovat se'
     }
