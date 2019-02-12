@@ -25,11 +25,6 @@ export default {
           title: 'Kontakty',
           icon: 'fa fa-address-book',
           href: '/kontakty'
-        },
-        {
-          title: 'Registrace',
-          icon: 'fa fa-user-plus',
-          href: '/signin'
         }
       ],
       collapsed: true,
