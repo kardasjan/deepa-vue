@@ -82,7 +82,7 @@ export default {
 }
 .search {
   width: auto;
-  padding: 0 37px 0 37px;
+  padding: 0 10px 0 59px;
   input {
     box-shadow: none;
     -webkit-box-shadow: none;

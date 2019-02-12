@@ -61,7 +61,7 @@
             <div class="field is-grouped">
               <p class="control">
                 <a class="button is-primary" @click="createContact">
-                  Vytvořit kontakt
+                  Upravit kontakt
                 </a>
               </p>
               <p class="control">

@@ -20,7 +20,7 @@
           <div class="field is-horizontal is-grouped is-grouped-right">
             <p class="control">
               <a class="button is-success" :class="{'is-loading' : isLoading}" @click='tryLogin'>
-                Login
+                Registrovat
               </a>
             </p>
           </div>

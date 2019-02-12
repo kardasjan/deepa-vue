@@ -35,4 +35,7 @@ export default {
 </script>
 
 <style scoped>
+.v-sidebar-menu {
+  z-index: 9999;
+}
 </style>

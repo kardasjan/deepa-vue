@@ -32,7 +32,7 @@ export default {
 <style scoped lang="scss">
 .menu-list {
   li {
-    padding: 10px 0 0 37px;
+    padding: 10px 0 0 58px;
     height: 45px;
     font-size: 12px;
     color: #343434;
