@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 
-const API_URL = "http://10.67.0.1:3015"
+const API_URL = 'http://10.67.0.1:3015'
 const CONTACTS_URL = API_URL + '/contacts'
 const SITE_URL = API_URL + '/sites/site'
 // const PARAM_URL = API_URL + '/contacts/getByParam'

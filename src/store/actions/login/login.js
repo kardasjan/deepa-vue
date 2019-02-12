@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = "http://10.67.0.1:3015"
+const API_URL = 'http://10.67.0.1:3015'
 const AUTH_URL = API_URL + '/auth'
 
 export default {

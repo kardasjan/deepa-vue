@@ -1,7 +1,6 @@
 <template>
   <nav class="row">
     <div class="col-xs-12">
-      <div id="nav-toggle"></div>
       <breadcrumbs />
       <toolbar-user-panel class="is-hidden-mobile"></toolbar-user-panel>
       <div class="datetime is-hidden-mobile">{{ datetime }}</div>
@@ -35,13 +34,6 @@ nav {
   border-width: 0 0 5px 0;
   border-color: #ececec;
   border-style: solid;
-}
-#nav-toggle {
-  width: 29px;
-  height: 21px;
-  float: left;
-  margin: 15px 0 0 0;
-  background: url('../assets/img/hamburger.png');
 }
 .datetime {
   float: right;

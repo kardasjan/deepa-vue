@@ -10,8 +10,7 @@ import lodash from 'lodash'
 import VueLodash from 'vue-lodash'
 import PrettyCheckbox from 'pretty-checkbox-vue'
 import VueCollapse from 'vue2-collapse'
-
-import 'document-register-element'
+import VueSidebarMenu from 'vue-sidebar-menu'
 
 Vue.config.productionTip = false
 
@@ -19,18 +18,7 @@ Vue.use(Vuebar)
 Vue.use(VueLodash, lodash)
 Vue.use(PrettyCheckbox)
 Vue.use(VueCollapse)
-
-function polyfillCE () {
-  require.ensure([], require => {
-    require('document-register-element')
-    window.customElements.define('ceri-side-nav', require('ceri-side-nav'))
-  }, 'cePoly')
-}
-if (!window.customElements) {
-  polyfillCE()
-} else {
-  window.customElements.define('ceri-side-nav', require('ceri-side-nav'))
-}
+Vue.use(VueSidebarMenu)
 
 /* eslint-disable no-new */
 export default new Vue({

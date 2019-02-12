@@ -35,5 +35,6 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
 @import '~pretty-checkbox/src/pretty-checkbox.scss';
+@import '~vue-sidebar-menu/dist/vue-sidebar-menu.css';
 @import './assets/scss/style.scss';
 </style>
